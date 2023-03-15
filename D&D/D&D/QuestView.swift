@@ -11,6 +11,7 @@ struct QuestView: View {
     
     @State private var question = ""
     @State private var response = ""
+    @State private var navigateToHelpView: Bool = false
     
     var body: some View {
         ZStack {
@@ -21,10 +22,9 @@ struct QuestView: View {
                     })
                     .foregroundColor(.black)
                     .padding()
-                    .frame(maxWidth: 300, maxHeight: 75)
+                    .frame(maxWidth: 300, maxHeight: 60)
                     .textFieldStyle(PlainTextFieldStyle())
                     .lineLimit(nil)
-                    .truncationMode(.head)
                 }
                 Divider()
                 
@@ -39,12 +39,14 @@ struct QuestView: View {
                     Spacer()
                     
                     Button(action: {
-                        // handle help icon button tapped
+                        self.navigateToHelpView = true
                     }) {
                         Image(systemName: "questionmark.circle")
                             .font(.system(size: 20))
                             .foregroundColor(.blue)
-                    }
+                    }.sheet(isPresented: self.$navigateToHelpView, content: {
+                        HelpView()
+                    })
                     .padding(.trailing, 16)
                     .padding(.top, 16)
                 }
