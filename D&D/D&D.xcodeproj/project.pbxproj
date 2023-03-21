@@ -7,28 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4A7C1DE329B2580D00D47A94 /* D_DApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7C1DE229B2580D00D47A94 /* D_DApp.swift */; };
 		4A7C1DE529B2580D00D47A94 /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7C1DE429B2580D00D47A94 /* StartView.swift */; };
 		4A7C1DE729B2580E00D47A94 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A7C1DE629B2580E00D47A94 /* Assets.xcassets */; };
 		4A7C1DEA29B2580E00D47A94 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A7C1DE929B2580E00D47A94 /* Preview Assets.xcassets */; };
-		4A7C1DEC29B2580E00D47A94 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7C1DEB29B2580E00D47A94 /* Persistence.swift */; };
-		4A7C1DEF29B2580E00D47A94 /* D_D.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4A7C1DED29B2580E00D47A94 /* D_D.xcdatamodeld */; };
 		4A81274A29BA2A3000E960D7 /* QuestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A81274929BA2A3000E960D7 /* QuestView.swift */; };
-		4A81274C29BA2A4F00E960D7 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A81274B29BA2A4F00E960D7 /* API.swift */; };
 		4A81275229C1521E00E960D7 /* HelpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A81275129C1521E00E960D7 /* HelpView.swift */; };
+		4A81275429C89B1B00E960D7 /* InstructionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A81275329C89B1B00E960D7 /* InstructionsView.swift */; };
+		4A81275629C89B2400E960D7 /* TipsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A81275529C89B2400E960D7 /* TipsView.swift */; };
+		4A81275829C89B3C00E960D7 /* ContactUsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A81275729C89B3C00E960D7 /* ContactUsView.swift */; };
+		4A81275B29C8AFA800E960D7 /* OpenAISwift in Frameworks */ = {isa = PBXBuildFile; productRef = 4A81275A29C8AFA800E960D7 /* OpenAISwift */; };
+		4A8127DD29C9ED4E00E960D7 /* D&DApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8127DC29C9ED4E00E960D7 /* D&DApp.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		4A7C1DDF29B2580D00D47A94 /* D&D.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "D&D.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		4A7C1DE229B2580D00D47A94 /* D_DApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = D_DApp.swift; sourceTree = "<group>"; };
 		4A7C1DE429B2580D00D47A94 /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
 		4A7C1DE629B2580E00D47A94 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4A7C1DE929B2580E00D47A94 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		4A7C1DEB29B2580E00D47A94 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
-		4A7C1DEE29B2580E00D47A94 /* D_D.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = D_D.xcdatamodel; sourceTree = "<group>"; };
 		4A81274929BA2A3000E960D7 /* QuestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestView.swift; sourceTree = "<group>"; };
-		4A81274B29BA2A4F00E960D7 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		4A81275129C1521E00E960D7 /* HelpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpView.swift; sourceTree = "<group>"; };
+		4A81275329C89B1B00E960D7 /* InstructionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionsView.swift; sourceTree = "<group>"; };
+		4A81275529C89B2400E960D7 /* TipsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsView.swift; sourceTree = "<group>"; };
+		4A81275729C89B3C00E960D7 /* ContactUsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUsView.swift; sourceTree = "<group>"; };
+		4A8127DC29C9ED4E00E960D7 /* D&DApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "D&DApp.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A81275B29C8AFA800E960D7 /* OpenAISwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,14 +63,14 @@
 		4A7C1DE129B2580D00D47A94 /* D&D */ = {
 			isa = PBXGroup;
 			children = (
-				4A7C1DE229B2580D00D47A94 /* D_DApp.swift */,
-				4A81274B29BA2A4F00E960D7 /* API.swift */,
+				4A8127DC29C9ED4E00E960D7 /* D&DApp.swift */,
 				4A7C1DE429B2580D00D47A94 /* StartView.swift */,
 				4A81274929BA2A3000E960D7 /* QuestView.swift */,
 				4A81275129C1521E00E960D7 /* HelpView.swift */,
+				4A81275329C89B1B00E960D7 /* InstructionsView.swift */,
+				4A81275529C89B2400E960D7 /* TipsView.swift */,
+				4A81275729C89B3C00E960D7 /* ContactUsView.swift */,
 				4A7C1DE629B2580E00D47A94 /* Assets.xcassets */,
-				4A7C1DEB29B2580E00D47A94 /* Persistence.swift */,
-				4A7C1DED29B2580E00D47A94 /* D_D.xcdatamodeld */,
 				4A7C1DE829B2580E00D47A94 /* Preview Content */,
 			);
 			path = "D&D";
@@ -98,6 +100,9 @@
 			dependencies = (
 			);
 			name = "D&D";
+			packageProductDependencies = (
+				4A81275A29C8AFA800E960D7 /* OpenAISwift */,
+			);
 			productName = "D&D";
 			productReference = 4A7C1DDF29B2580D00D47A94 /* D&D.app */;
 			productType = "com.apple.product-type.application";
@@ -126,6 +131,9 @@
 				Base,
 			);
 			mainGroup = 4A7C1DD629B2580D00D47A94;
+			packageReferences = (
+				4A81275929C8AFA800E960D7 /* XCRemoteSwiftPackageReference "OpenAISwift" */,
+			);
 			productRefGroup = 4A7C1DE029B2580D00D47A94 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -152,12 +160,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4A7C1DEC29B2580E00D47A94 /* Persistence.swift in Sources */,
+				4A81275829C89B3C00E960D7 /* ContactUsView.swift in Sources */,
+				4A81275429C89B1B00E960D7 /* InstructionsView.swift in Sources */,
+				4A8127DD29C9ED4E00E960D7 /* D&DApp.swift in Sources */,
 				4A7C1DE529B2580D00D47A94 /* StartView.swift in Sources */,
-				4A7C1DE329B2580D00D47A94 /* D_DApp.swift in Sources */,
 				4A81275229C1521E00E960D7 /* HelpView.swift in Sources */,
-				4A7C1DEF29B2580E00D47A94 /* D_D.xcdatamodeld in Sources */,
-				4A81274C29BA2A4F00E960D7 /* API.swift in Sources */,
+				4A81275629C89B2400E960D7 /* TipsView.swift in Sources */,
 				4A81274A29BA2A3000E960D7 /* QuestView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -360,18 +368,24 @@
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCVersionGroup section */
-		4A7C1DED29B2580E00D47A94 /* D_D.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				4A7C1DEE29B2580E00D47A94 /* D_D.xcdatamodel */,
-			);
-			currentVersion = 4A7C1DEE29B2580E00D47A94 /* D_D.xcdatamodel */;
-			path = D_D.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
+/* Begin XCRemoteSwiftPackageReference section */
+		4A81275929C8AFA800E960D7 /* XCRemoteSwiftPackageReference "OpenAISwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/adamrushy/OpenAISwift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
 		};
-/* End XCVersionGroup section */
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4A81275A29C8AFA800E960D7 /* OpenAISwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4A81275929C8AFA800E960D7 /* XCRemoteSwiftPackageReference "OpenAISwift" */;
+			productName = OpenAISwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 4A7C1DD729B2580D00D47A94 /* Project object */;
 }

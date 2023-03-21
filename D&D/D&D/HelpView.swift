@@ -12,27 +12,17 @@ struct HelpView: View {
         NavigationView {
             List {
                 Section(header: Text("Getting Started").foregroundColor(.black)) {
-                    NavigationLink(destination: Text("Instructions on how to get started")) {
+                    NavigationLink(destination: InstructionsView()) {
                         Label("How to get started", systemImage: "play.fill")
                     }
                     .foregroundColor(.black)
-                    NavigationLink(destination: Text("Tips on using the app")) {
+                    NavigationLink(destination: TipsView()) {
                         Label("Tips", systemImage: "lightbulb.fill")
                     }
                     .foregroundColor(.black)
                 }
-                Section(header: Text("Account").foregroundColor(.black)) {
-                    NavigationLink(destination: Text("How to create an account")) {
-                        Label("Create an account", systemImage: "person.crop.circle.badge.plus")
-                    }
-                    .foregroundColor(.black)
-                    NavigationLink(destination: Text("How to reset your password")) {
-                        Label("Reset Password", systemImage: "lock.rotation")
-                    }
-                    .foregroundColor(.black)
-                }
                 Section(header: Text("Contact Us").foregroundColor(.black)) {
-                    NavigationLink(destination: Text("Contact us with any questions or concerns")) {
+                    NavigationLink(destination: ContactUsView()) {
                         Label("Contact Us", systemImage: "envelope.fill")
                     }
                     .foregroundColor(.black)
