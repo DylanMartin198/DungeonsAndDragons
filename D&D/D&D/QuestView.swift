@@ -15,10 +15,9 @@ struct QuestionAndAnwer: Identifiable {
     let answer: String
 }
 
-
 struct QuestView: View {
     
-    let openAI = OpenAISwift(authToken: "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")
+    let openAI = OpenAISwift(authToken: "sk-apikey")
     
     @State private var search: String = ""
     @State private var questionAndAnswers: [QuestionAndAnwer] = []
@@ -36,7 +35,6 @@ struct QuestView: View {
                 questionAndAnswers.append(questionAndAnwer)
                 search = ""
                 searching = false
-                print(questionAndAnwer)
                 
             case .failure(let failure):
                 print(failure.localizedDescription)
@@ -46,7 +44,7 @@ struct QuestView: View {
     }
     
     var body: some View {
-        VStack(spacing: 0) {
+        HStack {
             TextField("Ask To Go On A D&D Journey!", text: $search)
                 .onSubmit {
                     if !search.isEmpty {
@@ -56,6 +54,23 @@ struct QuestView: View {
                 }
                 .padding()
                 .foregroundColor(.black)
+
+            Spacer()
+
+            Button(action: {
+                self.navigateToHelpView = true
+            }) {
+                Image(systemName: "questionmark.circle")
+                    .font(.system(size: 20))
+                    .foregroundColor(.blue)
+            }
+            .sheet(isPresented: self.$navigateToHelpView, content: {
+                HelpView()
+            })
+            .padding(.trailing, 10)
+        }
+            
+            Divider()
             
             if searching {
                 ProgressView()
@@ -67,11 +82,11 @@ struct QuestView: View {
                     VStack(spacing: 10) {
                         Text(qa.question)
                             .bold()
-                            .frame(maxWidth: .infinity, alignment: .trailing)
+                            .frame(maxWidth: .infinity, alignment: .center)
                     }
                     Text(qa.answer)
                         .padding([.bottom], 10)
-                        .frame(maxWidth: .infinity, alignment: .trailing)
+                        .frame(maxWidth: .infinity, alignment: .center)
                 }
                 .foregroundColor(.black)
             }
@@ -79,24 +94,6 @@ struct QuestView: View {
             Spacer()
         }
     }
-}
-
-//HStack {
-//    Spacer()
-//    Button(action: {
-//        self.navigateToHelpView = true
-//    }) {
-//        Image(systemName: "questionmark.circle")
-//            .font(.system(size: 20))
-//            .foregroundColor(.blue)
-//    }.sheet(isPresented: self.$navigateToHelpView, content: {
-//        HelpView()
-//    })
-//    .padding(.trailing, 16)
-//    .padding(.top, 12)
-//}
-//.padding(.trailing, 16)
-//.padding(.top, 12)
 
 struct QuestView_Previews: PreviewProvider {
     static var previews: some View {
