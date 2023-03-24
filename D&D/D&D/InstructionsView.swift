@@ -10,8 +10,11 @@ import SwiftUI
 struct InstructionsView: View {
     var body: some View {
         VStack {
-            Text("Instructions")
+            Text("To get started if you have a specific adventure in mind, type in the specific setting you would like. And if you are looking for some ideas just look at the suggested headers found in the tip section!")
         }
+        .padding(10)
+        .foregroundColor(.black)
+        Spacer()
     }
 }
 

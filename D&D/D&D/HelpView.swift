@@ -11,19 +11,13 @@ struct HelpView: View {
     var body: some View {
         NavigationView {
             List {
-                Section(header: Text("Getting Started").foregroundColor(.black)) {
+                Section(header: Text("Getting Started").foregroundColor(.gray)) {
                     NavigationLink(destination: InstructionsView()) {
                         Label("How to get started", systemImage: "play.fill")
                     }
                     .foregroundColor(.black)
                     NavigationLink(destination: TipsView()) {
                         Label("Tips", systemImage: "lightbulb.fill")
-                    }
-                    .foregroundColor(.black)
-                }
-                Section(header: Text("Contact Us").foregroundColor(.black)) {
-                    NavigationLink(destination: ContactUsView()) {
-                        Label("Contact Us", systemImage: "envelope.fill")
                     }
                     .foregroundColor(.black)
                 }

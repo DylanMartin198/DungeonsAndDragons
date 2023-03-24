@@ -17,7 +17,7 @@ struct QuestionAndAnwer: Identifiable {
 
 struct QuestView: View {
     
-    let openAI = OpenAISwift(authToken: "sk-apikey")
+    let openAI = OpenAISwift(authToken: "apikey")
     
     @State private var search: String = ""
     @State private var questionAndAnswers: [QuestionAndAnwer] = []
@@ -26,7 +26,7 @@ struct QuestView: View {
     @State private var navigateToHelpView: Bool = false
     
     private func performOpenAISearch() {
-        openAI.sendCompletion(with: search) { result in
+        openAI.sendCompletion(with: search, maxTokens: 50) { result in
             switch result {
             case .success(let success):
                 
@@ -45,7 +45,7 @@ struct QuestView: View {
     
     var body: some View {
         HStack {
-            TextField("Ask To Go On A D&D Journey!", text: $search)
+            TextField("Take Me On A D&D Adventure!", text: $search)
                 .onSubmit {
                     if !search.isEmpty {
                         searching = true
