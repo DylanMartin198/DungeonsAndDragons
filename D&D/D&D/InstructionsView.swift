@@ -9,6 +9,12 @@ import SwiftUI
 
 struct InstructionsView: View {
     var body: some View {
+        Text("Basic Instructions")
+            .font(.largeTitle)
+            .fontWeight(.bold)
+            .multilineTextAlignment(.center)
+            .foregroundColor(.black)
+        Divider()
         VStack {
             Text("To get started if you have a specific adventure in mind, type in the specific setting you would like. And if you are looking for some ideas just look at the suggested headers found in the tip section!")
         }

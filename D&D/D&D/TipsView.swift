@@ -19,6 +19,7 @@ struct TipsView: View {
                 Text("in a lost Mayan ruin")
                 Text("in the French Catacombs")
                 Text("in a haunted castle")
+                Text("in a magic forrest")
             }
             .foregroundColor(.black)
         }
