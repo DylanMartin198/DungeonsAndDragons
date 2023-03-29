@@ -17,7 +17,7 @@ struct QuestionAndAnwer: Identifiable {
 
 struct QuestView: View {
     
-    let openAI = OpenAISwift(authToken: "sk-apikey")
+    let openAI = OpenAISwift(authToken: "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")
     
     @State private var search: String = ""
     @State private var questionAndAnswers: [QuestionAndAnwer] = []
@@ -25,6 +25,7 @@ struct QuestView: View {
     @State private var historyList: String = ""
     
     @State private var navigateToHelpView: Bool = false
+    @State private var navigateToImageView: Bool = false
     
     private func performOpenAISearch() {
         let prompt = search + historyList
@@ -101,6 +102,22 @@ struct QuestView: View {
             }
             
             Spacer()
+        
+        Button(action: {
+            self.navigateToImageView = true
+        }) {
+            Image(systemName: "photo")
+                .font(.system(size: 24))
+                .foregroundColor(.blue)
+        }
+        .padding(.trailing, 16)
+        .padding(.bottom, 16)
+        .alignmentGuide(.bottom) { d in
+            d[.trailing]
+        }.sheet(isPresented: self.$navigateToImageView, content: {
+            ImageView()
+        })
+        
         }
     }
 
