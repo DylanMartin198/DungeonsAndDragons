@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct HelpView: View {
+    @Environment(\.presentationMode) var presentationMode
+    
     var body: some View {
         NavigationView {
             List {
@@ -22,6 +24,25 @@ struct HelpView: View {
                     .foregroundColor(.black)
                 }
             }
+            .navigationTitle("Help")
+            .navigationBarBackButtonHidden(true)
+            .navigationBarItems(leading:
+                HStack {
+                    Button(action: {
+                        presentationMode.wrappedValue.dismiss()
+                    }) {
+                        Image(systemName: "chevron.backward")
+                            .foregroundColor(.blue)
+                            .imageScale(.large)
+                    }
+                    Button(action: {
+                        presentationMode.wrappedValue.dismiss()
+                    }) {
+                        Text("Back")
+                            .foregroundColor(.blue)
+                    }
+                }
+            )
         }
     }
 }

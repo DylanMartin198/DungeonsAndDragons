@@ -38,6 +38,7 @@ struct ImageView: View {
     @ObservedObject var viewModel = ViewModel()
     @State var text = ""
     @State var image: UIImage?
+    @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
         NavigationView {
@@ -47,11 +48,12 @@ struct ImageView: View {
                     Image(uiImage: image)
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                        .frame(width: 250, height: 250)
+                        .frame(width: 350, height: 350)
                 } else {
                     Text("Type prompt to generate image!")
                 }
                 Spacer()
+                Divider()
                 TextField("Type prompt here...", text: $text)
                     .padding()
                     .foregroundColor(.black)
@@ -68,6 +70,24 @@ struct ImageView: View {
                 }
             }
             .navigationTitle("Image Generator")
+            .navigationBarBackButtonHidden(true)
+            .navigationBarItems(
+                leading: HStack {
+                    Button(action: {
+                        presentationMode.wrappedValue.dismiss()
+                    }) {
+                        Image(systemName: "chevron.backward")
+                            .foregroundColor(.blue)
+                            .imageScale(.large)
+                    }
+                    Button(action: {
+                        presentationMode.wrappedValue.dismiss()
+                    }) {
+                        Text("Back")
+                            .foregroundColor(.blue)
+                    }
+                }
+            )
             .onAppear {
                 viewModel.setup()
             }
