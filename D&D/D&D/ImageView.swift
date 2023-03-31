@@ -33,40 +33,49 @@ final class ViewModel: ObservableObject {
     }
 }
 
-
 struct ImageView: View {
     @ObservedObject var viewModel = ViewModel()
     @State var text = ""
     @State var image: UIImage?
+    @State private var searching: Bool = false
     @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
         NavigationView {
-            VStack {
-                Spacer()
-                if let image = image {
-                    Image(uiImage: image)
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 350, height: 350)
-                } else {
-                    Text("Type prompt to generate image!")
-                }
-                Spacer()
-                Divider()
-                TextField("Type prompt here...", text: $text)
-                    .padding()
-                    .foregroundColor(.black)
-                    .onSubmit {
-                    if !text.trimmingCharacters(in: .whitespaces).isEmpty {
-                        Task {
-                            let result = await viewModel.generateImage(prompt: text)
-                            if result == nil {
-                                print("Failed to get image")
+            ZStack {
+                VStack {
+                    Spacer()
+                    if let image = image {
+                        Image(uiImage: image)
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 350, height: 350)
+                            .scaledToFit()
+                    } else {
+                        Text("Type prompt to generate image!")
+                    }
+                    Spacer()
+                    Divider()
+                    TextField("Type prompt here...", text: $text)
+                        .padding()
+                        .foregroundColor(.black)
+                        .onSubmit {
+                        if !text.trimmingCharacters(in: .whitespaces).isEmpty {
+                            Task {
+                                searching = true
+                                let result = await viewModel.generateImage(prompt: text)
+                                searching = false
+                                if result == nil {
+                                    print("Failed to get image")
+                                }
+                                self.image = result
                             }
-                            self.image = result
                         }
                     }
+                }
+                if searching {
+                    ProgressView()
+                        .padding()
                 }
             }
             .navigationTitle("Image Generator")
